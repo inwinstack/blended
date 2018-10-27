@@ -68,4 +68,5 @@ type PoolStatus struct {
 	LastUpdateTime metav1.Time `json:"lastUpdateTime"`
 	AllocatedIPs   []string    `json:"allocatedIPs"`
 	Capacity       int         `json:"capacity"`
+	Allocatable    int         `json:"allocatable"`
 }
