@@ -25,6 +25,22 @@ type IPListerExpansion interface{}
 // IPNamespaceLister.
 type IPNamespaceListerExpansion interface{}
 
+// NATListerExpansion allows custom methods to be added to
+// NATLister.
+type NATListerExpansion interface{}
+
+// NATNamespaceListerExpansion allows custom methods to be added to
+// NATNamespaceLister.
+type NATNamespaceListerExpansion interface{}
+
 // PoolListerExpansion allows custom methods to be added to
 // PoolLister.
 type PoolListerExpansion interface{}
+
+// SecurityListerExpansion allows custom methods to be added to
+// SecurityLister.
+type SecurityListerExpansion interface{}
+
+// SecurityNamespaceListerExpansion allows custom methods to be added to
+// SecurityNamespaceLister.
+type SecurityNamespaceListerExpansion interface{}

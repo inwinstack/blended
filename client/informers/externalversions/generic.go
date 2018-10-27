@@ -54,8 +54,12 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 	// Group=inwinstack.com, Version=v1
 	case v1.SchemeGroupVersion.WithResource("ips"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Inwinstack().V1().IPs().Informer()}, nil
+	case v1.SchemeGroupVersion.WithResource("nats"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Inwinstack().V1().NATs().Informer()}, nil
 	case v1.SchemeGroupVersion.WithResource("pools"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Inwinstack().V1().Pools().Informer()}, nil
+	case v1.SchemeGroupVersion.WithResource("securities"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Inwinstack().V1().Securities().Informer()}, nil
 
 	}
 

@@ -27,7 +27,9 @@ import (
 type InwinstackV1Interface interface {
 	RESTClient() rest.Interface
 	IPsGetter
+	NATsGetter
 	PoolsGetter
+	SecuritiesGetter
 }
 
 // InwinstackV1Client is used to interact with features provided by the inwinstack.com group.
@@ -39,8 +41,16 @@ func (c *InwinstackV1Client) IPs(namespace string) IPInterface {
 	return newIPs(c, namespace)
 }
 
+func (c *InwinstackV1Client) NATs(namespace string) NATInterface {
+	return newNATs(c, namespace)
+}
+
 func (c *InwinstackV1Client) Pools() PoolInterface {
 	return newPools(c)
+}
+
+func (c *InwinstackV1Client) Securities(namespace string) SecurityInterface {
+	return newSecurities(c, namespace)
 }
 
 // NewForConfig creates a new InwinstackV1Client for the given config.

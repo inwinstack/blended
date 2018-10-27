@@ -19,4 +19,8 @@ package v1
 
 type IPExpansion interface{}
 
+type NATExpansion interface{}
+
 type PoolExpansion interface{}
+
+type SecurityExpansion interface{}

@@ -25,8 +25,12 @@ import (
 type Interface interface {
 	// IPs returns a IPInformer.
 	IPs() IPInformer
+	// NATs returns a NATInformer.
+	NATs() NATInformer
 	// Pools returns a PoolInformer.
 	Pools() PoolInformer
+	// Securities returns a SecurityInformer.
+	Securities() SecurityInformer
 }
 
 type version struct {
@@ -45,7 +49,17 @@ func (v *version) IPs() IPInformer {
 	return &iPInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// NATs returns a NATInformer.
+func (v *version) NATs() NATInformer {
+	return &nATInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // Pools returns a PoolInformer.
 func (v *version) Pools() PoolInformer {
 	return &poolInformer{factory: v.factory, tweakListOptions: v.tweakListOptions}
+}
+
+// Securities returns a SecurityInformer.
+func (v *version) Securities() SecurityInformer {
+	return &securityInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

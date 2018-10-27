@@ -31,8 +31,16 @@ func (c *FakeInwinstackV1) IPs(namespace string) v1.IPInterface {
 	return &FakeIPs{c, namespace}
 }
 
+func (c *FakeInwinstackV1) NATs(namespace string) v1.NATInterface {
+	return &FakeNATs{c, namespace}
+}
+
 func (c *FakeInwinstackV1) Pools() v1.PoolInterface {
 	return &FakePools{c}
+}
+
+func (c *FakeInwinstackV1) Securities(namespace string) v1.SecurityInterface {
+	return &FakeSecurities{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate
