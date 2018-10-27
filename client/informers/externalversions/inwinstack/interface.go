@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 Kyle Bai(kyle.b@inwinstack.com)
+Copyright © 2018 inwinSTACK.inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ limitations under the License.
 package inwinstack
 
 import (
-	internalinterfaces "github.com/inwinstack/ipam/client/informers/externalversions/internalinterfaces"
-	v1 "github.com/inwinstack/ipam/client/informers/externalversions/inwinstack/v1"
+	internalinterfaces "github.com/inwinstack/blended/client/informers/externalversions/internalinterfaces"
+	v1 "github.com/inwinstack/blended/client/informers/externalversions/inwinstack/v1"
 )
 
 // Interface provides access to each of this group's versions.

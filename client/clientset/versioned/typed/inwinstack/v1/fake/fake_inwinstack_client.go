@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 Kyle Bai(kyle.b@inwinstack.com)
+Copyright © 2018 inwinSTACK.inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ limitations under the License.
 package fake
 
 import (
-	v1 "github.com/inwinstack/ipam/client/clientset/versioned/typed/inwinstack/v1"
+	v1 "github.com/inwinstack/blended/client/clientset/versioned/typed/inwinstack/v1"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )

@@ -17,7 +17,7 @@ limitations under the License.
 package v1
 
 import (
-	inwinstack "github.com/inwinstack/ipam/apis/inwinstack"
+	inwinstack "github.com/inwinstack/blended/apis/inwinstack"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"

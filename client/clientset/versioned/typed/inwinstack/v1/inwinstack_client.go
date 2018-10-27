@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 Kyle Bai(kyle.b@inwinstack.com)
+Copyright © 2018 inwinSTACK.inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ limitations under the License.
 package v1
 
 import (
-	v1 "github.com/inwinstack/ipam/apis/inwinstack/v1"
-	"github.com/inwinstack/ipam/client/clientset/versioned/scheme"
+	v1 "github.com/inwinstack/blended/apis/inwinstack/v1"
+	"github.com/inwinstack/blended/client/clientset/versioned/scheme"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	rest "k8s.io/client-go/rest"
 )

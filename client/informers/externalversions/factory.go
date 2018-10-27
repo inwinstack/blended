@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 Kyle Bai(kyle.b@inwinstack.com)
+Copyright © 2018 inwinSTACK.inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/inwinstack/ipam/client/clientset/versioned"
-	internalinterfaces "github.com/inwinstack/ipam/client/informers/externalversions/internalinterfaces"
-	inwinstack "github.com/inwinstack/ipam/client/informers/externalversions/inwinstack"
+	versioned "github.com/inwinstack/blended/client/clientset/versioned"
+	internalinterfaces "github.com/inwinstack/blended/client/informers/externalversions/internalinterfaces"
+	inwinstack "github.com/inwinstack/blended/client/informers/externalversions/inwinstack"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 Kyle Bai(kyle.b@inwinstack.com)
+Copyright © 2018 inwinSTACK.inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ limitations under the License.
 package fake
 
 import (
-	inwinstackv1 "github.com/inwinstack/ipam/apis/inwinstack/v1"
+	inwinstackv1 "github.com/inwinstack/blended/apis/inwinstack/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

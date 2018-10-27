@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 Kyle Bai(kyle.b@inwinstack.com)
+Copyright © 2018 inwinSTACK.inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ limitations under the License.
 package versioned
 
 import (
-	inwinstackv1 "github.com/inwinstack/ipam/client/clientset/versioned/typed/inwinstack/v1"
+	inwinstackv1 "github.com/inwinstack/blended/client/clientset/versioned/typed/inwinstack/v1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

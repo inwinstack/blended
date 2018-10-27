@@ -1,2 +1,2 @@
-# IPAM APIs and ClientSet
-Scheme, typing and client packages for IPAM and Kubernetes-like API objects.
+# APIs and Clients for PA and IPAM operator
+Scheme, typing, client packages and Kubernetes-like API objects for PA and IPAM.

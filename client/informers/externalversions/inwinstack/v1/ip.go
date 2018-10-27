@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 Kyle Bai(kyle.b@inwinstack.com)
+Copyright © 2018 inwinSTACK.inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -20,10 +20,10 @@ package v1
 import (
 	time "time"
 
-	inwinstackv1 "github.com/inwinstack/ipam/apis/inwinstack/v1"
-	versioned "github.com/inwinstack/ipam/client/clientset/versioned"
-	internalinterfaces "github.com/inwinstack/ipam/client/informers/externalversions/internalinterfaces"
-	v1 "github.com/inwinstack/ipam/client/listers/inwinstack/v1"
+	inwinstackv1 "github.com/inwinstack/blended/apis/inwinstack/v1"
+	versioned "github.com/inwinstack/blended/client/clientset/versioned"
+	internalinterfaces "github.com/inwinstack/blended/client/informers/externalversions/internalinterfaces"
+	v1 "github.com/inwinstack/blended/client/listers/inwinstack/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
