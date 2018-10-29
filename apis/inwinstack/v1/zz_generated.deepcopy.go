@@ -196,6 +196,36 @@ func (in *NATSpec) DeepCopyInto(out *NATSpec) {
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}
+	if in.SatTranslatedAddresses != nil {
+		in, out := &in.SatTranslatedAddresses, &out.SatTranslatedAddresses
+		*out = make([]string, len(*in))
+		copy(*out, *in)
+	}
+	if in.SatFallbackTranslatedAddresses != nil {
+		in, out := &in.SatFallbackTranslatedAddresses, &out.SatFallbackTranslatedAddresses
+		*out = make([]string, len(*in))
+		copy(*out, *in)
+	}
+	if in.Targets != nil {
+		in, out := &in.Targets, &out.Targets
+		*out = make(map[string][]string, len(*in))
+		for key, val := range *in {
+			var outVal []string
+			if val == nil {
+				(*out)[key] = nil
+			} else {
+				in, out := &val, &outVal
+				*out = make([]string, len(*in))
+				copy(*out, *in)
+			}
+			(*out)[key] = outVal
+		}
+	}
+	if in.Tags != nil {
+		in, out := &in.Tags, &out.Tags
+		*out = make([]string, len(*in))
+		copy(*out, *in)
+	}
 	return
 }
 
@@ -436,6 +466,26 @@ func (in *SecuritySpec) DeepCopyInto(out *SecuritySpec) {
 	}
 	if in.Categories != nil {
 		in, out := &in.Categories, &out.Categories
+		*out = make([]string, len(*in))
+		copy(*out, *in)
+	}
+	if in.Targets != nil {
+		in, out := &in.Targets, &out.Targets
+		*out = make(map[string][]string, len(*in))
+		for key, val := range *in {
+			var outVal []string
+			if val == nil {
+				(*out)[key] = nil
+			} else {
+				in, out := &val, &outVal
+				*out = make([]string, len(*in))
+				copy(*out, *in)
+			}
+			(*out)[key] = outVal
+		}
+	}
+	if in.Tags != nil {
+		in, out := &in.Tags, &out.Tags
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}

@@ -43,6 +43,11 @@ type Security struct {
 	Status SecurityStatus `json:"status,omitempty"`
 }
 
+// These are the valid default of a security.
+const (
+	SecurityUniversal = "universal"
+)
+
 // These are the valid action of a security.
 const (
 	SecurityAllow = "allow"
@@ -51,19 +56,38 @@ const (
 
 // SecuritySpec is the spec for a security resource.
 type SecuritySpec struct {
-	Description                     string   `json:"description"`
-	SourceZones                     []string `json:"sourceZones"`
-	SourceAddresses                 []string `json:"sourceAddresses"`
-	SourceUsers                     []string `json:"sourceUsers"`
-	HipProfiles                     []string `json:"hipProfiles"`
-	DestinationZones                []string `json:"destinationZones"`
-	DestinationAddresses            []string `json:"destinationAddresses"`
-	Applications                    []string `json:"aplications"`
-	Services                        []string `json:"services"`
-	Categories                      []string `json:"categories"`
-	Action                          string   `json:"action"`
-	IcmpUnreachable                 bool     `json:"icmpUnreachable"`
-	DisableServerResponseInspection bool     `json:"disableServerResponseInspection"`
+	Type                            string
+	Description                     string              `json:"description"`
+	SourceZones                     []string            `json:"sourceZones"`
+	SourceAddresses                 []string            `json:"sourceAddresses"`
+	SourceUsers                     []string            `json:"sourceUsers"`
+	HipProfiles                     []string            `json:"hipProfiles"`
+	DestinationZones                []string            `json:"destinationZones"`
+	DestinationAddresses            []string            `json:"destinationAddresses"`
+	Applications                    []string            `json:"applications"`
+	Services                        []string            `json:"services"`
+	Categories                      []string            `json:"categories"`
+	Action                          string              `json:"action"`
+	IcmpUnreachable                 bool                `json:"icmpUnreachable"`
+	DisableServerResponseInspection bool                `json:"disableServerResponseInspection"`
+	NegateDestination               bool                `json:"negateDestination"`
+	NegateSource                    bool                `json:"negateSource"`
+	NegateTarget                    bool                `json:"negateTarget"`
+	LogSetting                      string              `json:"logSetting"`
+	LogStart                        bool                `json:"logStart"`
+	LogEnd                          bool                `json:"logEnd"`
+	Disabled                        bool                `json:"disabled"`
+	Schedule                        string              `json:"schedule"`
+	Group                           string              `json:"group"`
+	Targets                         map[string][]string `json:"targets"`
+	Virus                           string              `json:"virus"`
+	Spyware                         string              `json:"spyware"`
+	Vulnerability                   string              `json:"vulnerability"`
+	URLFiltering                    string              `json:"urlFiltering"`
+	FileBlocking                    string              `json:"fileBlocking"`
+	WildFireAnalysis                string              `json:"wildFireAnalysis"`
+	DataFiltering                   string              `json:"dataFiltering"`
+	Tags                            []string            `json:"tags"`
 }
 
 type SecurityPhase string

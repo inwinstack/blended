@@ -43,6 +43,25 @@ type NAT struct {
 	Status NATStatus `json:"status,omitempty"`
 }
 
+// These are the valid values for SatType.
+const (
+	NATDynamicIPAndPort = "dynamic-ip-and-port"
+	NATDynamicIP        = "dynamic-ip"
+	NATStaticIP         = "static-ip"
+)
+
+// These are the valid values for SatAddressType.
+const (
+	NATInterfaceAddress  = "interface-address"
+	NATTranslatedAddress = "translated-address"
+)
+
+// These are the valid settings for SatFallbackIPType.
+const (
+	NATIP         = "ip"
+	NATFloatingIP = "floating"
+)
+
 // These are the valid ip type of a NAT.
 const (
 	NATIPv4 = "ipv4"
@@ -62,17 +81,34 @@ const (
 
 // NATSpec is the spec for a NAT resource.
 type NATSpec struct {
-	Type                 string   `json:"type"`
-	Description          string   `json:"description"`
-	SourceZones          []string `json:"sourceZones"`
-	SourceAddresses      []string `json:"sourceAddresses"`
-	DestinationAddresses []string `json:"sestinationAddresses"`
-	DestinationZone      string   `json:"destinationZone"`
-	ToInterface          string   `json:"toInterface"`
-	SatType              string   `json:"satType"`
-	DatType              string   `json:"datType"`
-	DatAddress           string   `json:"datAddress"`
-	DatPort              int32    `json:"datPort"`
+	Type                           string              `json:"type"`
+	Description                    string              `json:"description"`
+	SourceZones                    []string            `json:"sourceZones"`
+	SourceAddresses                []string            `json:"sourceAddresses"`
+	DestinationAddresses           []string            `json:"destinationAddresses"`
+	DestinationZone                string              `json:"destinationZone"`
+	ToInterface                    string              `json:"toInterface"`
+	Service                        string              `json:"service"`
+	SatType                        string              `json:"satType"`
+	SatAddressType                 string              `json:"satAddressType"`
+	SatTranslatedAddresses         []string            `json:"satTranslatedAddresses"`
+	SatInterface                   string              `json:"satInterface"`
+	SatIPAddress                   string              `json:"satIPAddress"`
+	SatFallbackType                string              `json:"satFallbackType"`
+	SatFallbackTranslatedAddresses []string            `json:"satFallbackTranslatedAddresses"`
+	SatFallbackInterface           string              `json:"satFallbackInterface"`
+	SatFallbackIPType              string              `json:"satFallbackIPType"`
+	SatFallbackIPAddress           string              `json:"satFallbackIPAddress"`
+	SatStaticTranslatedAddress     string              `json:"satStaticTranslatedAddress"`
+	SatStaticBiDirectional         bool                `json:"satStaticBiDirectional"`
+	DatType                        string              `json:"datType"`
+	DatAddress                     string              `json:"datAddress"`
+	DatPort                        int32               `json:"datPort"`
+	DatDynamicDistribution         string              `json:"datDynamicDistribution"`
+	Disabled                       bool                `json:"disabled"`
+	Targets                        map[string][]string `json:"targets"`
+	NegateTarget                   bool                `json:"negateTarget"`
+	Tags                           []string            `json:"tags"`
 }
 
 type NATPhase string
