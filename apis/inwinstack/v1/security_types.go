@@ -56,38 +56,38 @@ const (
 
 // SecuritySpec is the spec for a security resource.
 type SecuritySpec struct {
-	Type                            string
-	Description                     string              `json:"description"`
-	SourceZones                     []string            `json:"sourceZones"`
-	SourceAddresses                 []string            `json:"sourceAddresses"`
-	SourceUsers                     []string            `json:"sourceUsers"`
-	HipProfiles                     []string            `json:"hipProfiles"`
-	DestinationZones                []string            `json:"destinationZones"`
-	DestinationAddresses            []string            `json:"destinationAddresses"`
-	Applications                    []string            `json:"applications"`
-	Services                        []string            `json:"services"`
-	Categories                      []string            `json:"categories"`
-	Action                          string              `json:"action"`
-	IcmpUnreachable                 bool                `json:"icmpUnreachable"`
+	Type                            string              `json:"type,omitempty"`
+	Description                     string              `json:"description,omitempty"`
+	SourceZones                     []string            `json:"sourceZones,omitempty"`
+	SourceAddresses                 []string            `json:"sourceAddresses,omitempty"`
+	SourceUsers                     []string            `json:"sourceUsers,omitempty"`
+	HipProfiles                     []string            `json:"hipProfiles,omitempty"`
+	DestinationZones                []string            `json:"destinationZones,omitempty"`
+	DestinationAddresses            []string            `json:"destinationAddresses,omitempty"`
+	Applications                    []string            `json:"applications,omitempty"`
+	Services                        []string            `json:"services,omitempty"`
+	Categories                      []string            `json:"categories,omitempty"`
+	Action                          string              `json:"action,omitempty"`
+	IcmpUnreachable                 bool                `json:"icmpUnreachable,omitempty"`
 	DisableServerResponseInspection bool                `json:"disableServerResponseInspection"`
-	NegateDestination               bool                `json:"negateDestination"`
-	NegateSource                    bool                `json:"negateSource"`
-	NegateTarget                    bool                `json:"negateTarget"`
-	LogSetting                      string              `json:"logSetting"`
-	LogStart                        bool                `json:"logStart"`
-	LogEnd                          bool                `json:"logEnd"`
-	Disabled                        bool                `json:"disabled"`
-	Schedule                        string              `json:"schedule"`
-	Group                           string              `json:"group"`
-	Targets                         map[string][]string `json:"targets"`
-	Virus                           string              `json:"virus"`
-	Spyware                         string              `json:"spyware"`
-	Vulnerability                   string              `json:"vulnerability"`
-	URLFiltering                    string              `json:"urlFiltering"`
-	FileBlocking                    string              `json:"fileBlocking"`
-	WildFireAnalysis                string              `json:"wildFireAnalysis"`
-	DataFiltering                   string              `json:"dataFiltering"`
-	Tags                            []string            `json:"tags"`
+	NegateDestination               bool                `json:"negateDestination,omitempty"`
+	NegateSource                    bool                `json:"negateSource,omitempty"`
+	NegateTarget                    bool                `json:"negateTarget,omitempty"`
+	LogSetting                      string              `json:"logSetting,omitempty"`
+	LogStart                        bool                `json:"logStart,omitempty"`
+	LogEnd                          bool                `json:"logEnd,omitempty"`
+	Disabled                        bool                `json:"disabled,omitempty"`
+	Schedule                        string              `json:"schedule,omitempty"`
+	Group                           string              `json:"group,omitempty"`
+	Targets                         map[string][]string `json:"targets,omitempty"`
+	Virus                           string              `json:"virus,omitempty"`
+	Spyware                         string              `json:"spyware,omitempty"`
+	Vulnerability                   string              `json:"vulnerability,omitempty"`
+	URLFiltering                    string              `json:"urlFiltering,omitempty"`
+	FileBlocking                    string              `json:"fileBlocking,omitempty"`
+	WildFireAnalysis                string              `json:"wildFireAnalysis,omitempty"`
+	DataFiltering                   string              `json:"dataFiltering,omitempty"`
+	Tags                            []string            `json:"tags,omitempty"`
 }
 
 type SecurityPhase string

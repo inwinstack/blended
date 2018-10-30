@@ -81,34 +81,34 @@ const (
 
 // NATSpec is the spec for a NAT resource.
 type NATSpec struct {
-	Type                           string              `json:"type"`
-	Description                    string              `json:"description"`
-	SourceZones                    []string            `json:"sourceZones"`
-	SourceAddresses                []string            `json:"sourceAddresses"`
-	DestinationAddresses           []string            `json:"destinationAddresses"`
-	DestinationZone                string              `json:"destinationZone"`
-	ToInterface                    string              `json:"toInterface"`
-	Service                        string              `json:"service"`
-	SatType                        string              `json:"satType"`
-	SatAddressType                 string              `json:"satAddressType"`
-	SatTranslatedAddresses         []string            `json:"satTranslatedAddresses"`
-	SatInterface                   string              `json:"satInterface"`
-	SatIPAddress                   string              `json:"satIPAddress"`
-	SatFallbackType                string              `json:"satFallbackType"`
-	SatFallbackTranslatedAddresses []string            `json:"satFallbackTranslatedAddresses"`
-	SatFallbackInterface           string              `json:"satFallbackInterface"`
-	SatFallbackIPType              string              `json:"satFallbackIPType"`
-	SatFallbackIPAddress           string              `json:"satFallbackIPAddress"`
-	SatStaticTranslatedAddress     string              `json:"satStaticTranslatedAddress"`
-	SatStaticBiDirectional         bool                `json:"satStaticBiDirectional"`
-	DatType                        string              `json:"datType"`
-	DatAddress                     string              `json:"datAddress"`
-	DatPort                        int32               `json:"datPort"`
-	DatDynamicDistribution         string              `json:"datDynamicDistribution"`
-	Disabled                       bool                `json:"disabled"`
-	Targets                        map[string][]string `json:"targets"`
-	NegateTarget                   bool                `json:"negateTarget"`
-	Tags                           []string            `json:"tags"`
+	Type                           string              `json:"type,omitempty"`
+	Description                    string              `json:"description,omitempty"`
+	SourceZones                    []string            `json:"sourceZones,omitempty"`
+	SourceAddresses                []string            `json:"sourceAddresses,omitempty"`
+	DestinationAddresses           []string            `json:"destinationAddresses,omitempty"`
+	DestinationZone                string              `json:"destinationZone,omitempty"`
+	ToInterface                    string              `json:"toInterface,omitempty"`
+	Service                        string              `json:"service,omitempty"`
+	SatType                        string              `json:"satType,omitempty"`
+	SatAddressType                 string              `json:"satAddressType,omitempty"`
+	SatTranslatedAddresses         []string            `json:"satTranslatedAddresses,omitempty"`
+	SatInterface                   string              `json:"satInterface,omitempty"`
+	SatIPAddress                   string              `json:"satIPAddress,omitempty"`
+	SatFallbackType                string              `json:"satFallbackType,omitempty"`
+	SatFallbackTranslatedAddresses []string            `json:"satFallbackTranslatedAddresses,omitempty"`
+	SatFallbackInterface           string              `json:"satFallbackInterface,omitempty"`
+	SatFallbackIPType              string              `json:"satFallbackIPType,omitempty"`
+	SatFallbackIPAddress           string              `json:"satFallbackIPAddress,omitempty"`
+	SatStaticTranslatedAddress     string              `json:"satStaticTranslatedAddress,omitempty"`
+	SatStaticBiDirectional         bool                `json:"satStaticBiDirectional,omitempty"`
+	DatType                        string              `json:"datType,omitempty"`
+	DatAddress                     string              `json:"datAddress,omitempty"`
+	DatPort                        int32               `json:"datPort,omitempty"`
+	DatDynamicDistribution         string              `json:"datDynamicDistribution,omitempty"`
+	Disabled                       bool                `json:"disabled,omitempty"`
+	Targets                        map[string][]string `json:"targets,omitempty"`
+	NegateTarget                   bool                `json:"negateTarget,omitempty"`
+	Tags                           []string            `json:"tags,omitempty"`
 }
 
 type NATPhase string
