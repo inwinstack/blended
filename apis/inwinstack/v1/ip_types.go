@@ -64,4 +64,5 @@ type IPStatus struct {
 	Reason         string      `json:"reason,omitempty"`
 	LastUpdateTime metav1.Time `json:"lastUpdateTime"`
 	Address        string      `json:"address,omitempty"`
+	Ports          []int       `json:"ports,omitempty"`
 }

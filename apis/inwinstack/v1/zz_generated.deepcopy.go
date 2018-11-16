@@ -104,6 +104,11 @@ func (in *IPSpec) DeepCopy() *IPSpec {
 func (in *IPStatus) DeepCopyInto(out *IPStatus) {
 	*out = *in
 	in.LastUpdateTime.DeepCopyInto(&out.LastUpdateTime)
+	if in.Ports != nil {
+		in, out := &in.Ports, &out.Ports
+		*out = make([]int, len(*in))
+		copy(*out, *in)
+	}
 	return
 }
 
