@@ -30,6 +30,7 @@ type InwinstackV1Interface interface {
 	NATsGetter
 	PoolsGetter
 	SecuritiesGetter
+	ServicesGetter
 }
 
 // InwinstackV1Client is used to interact with features provided by the inwinstack.com group.
@@ -51,6 +52,10 @@ func (c *InwinstackV1Client) Pools() PoolInterface {
 
 func (c *InwinstackV1Client) Securities(namespace string) SecurityInterface {
 	return newSecurities(c, namespace)
+}
+
+func (c *InwinstackV1Client) Services(namespace string) ServiceInterface {
+	return newServices(c, namespace)
 }
 
 // NewForConfig creates a new InwinstackV1Client for the given config.

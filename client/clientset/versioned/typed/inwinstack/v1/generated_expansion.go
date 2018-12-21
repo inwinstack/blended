@@ -24,3 +24,5 @@ type NATExpansion interface{}
 type PoolExpansion interface{}
 
 type SecurityExpansion interface{}
+
+type ServiceExpansion interface{}

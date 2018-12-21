@@ -31,6 +31,8 @@ type Interface interface {
 	Pools() PoolInformer
 	// Securities returns a SecurityInformer.
 	Securities() SecurityInformer
+	// Services returns a ServiceInformer.
+	Services() ServiceInformer
 }
 
 type version struct {
@@ -62,4 +64,9 @@ func (v *version) Pools() PoolInformer {
 // Securities returns a SecurityInformer.
 func (v *version) Securities() SecurityInformer {
 	return &securityInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Services returns a ServiceInformer.
+func (v *version) Services() ServiceInformer {
+	return &serviceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
