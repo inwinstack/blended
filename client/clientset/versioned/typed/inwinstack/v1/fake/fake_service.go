@@ -30,7 +30,6 @@ import (
 // FakeServices implements ServiceInterface
 type FakeServices struct {
 	Fake *FakeInwinstackV1
-	ns   string
 }
 
 var servicesResource = schema.GroupVersionResource{Group: "inwinstack.com", Version: "v1", Resource: "services"}
@@ -40,8 +39,7 @@ var servicesKind = schema.GroupVersionKind{Group: "inwinstack.com", Version: "v1
 // Get takes name of the service, and returns the corresponding service object, and an error if there is any.
 func (c *FakeServices) Get(name string, options v1.GetOptions) (result *inwinstackv1.Service, err error) {
 	obj, err := c.Fake.
-		Invokes(testing.NewGetAction(servicesResource, c.ns, name), &inwinstackv1.Service{})
-
+		Invokes(testing.NewRootGetAction(servicesResource, name), &inwinstackv1.Service{})
 	if obj == nil {
 		return nil, err
 	}
@@ -51,8 +49,7 @@ func (c *FakeServices) Get(name string, options v1.GetOptions) (result *inwinsta
 // List takes label and field selectors, and returns the list of Services that match those selectors.
 func (c *FakeServices) List(opts v1.ListOptions) (result *inwinstackv1.ServiceList, err error) {
 	obj, err := c.Fake.
-		Invokes(testing.NewListAction(servicesResource, servicesKind, c.ns, opts), &inwinstackv1.ServiceList{})
-
+		Invokes(testing.NewRootListAction(servicesResource, servicesKind, opts), &inwinstackv1.ServiceList{})
 	if obj == nil {
 		return nil, err
 	}
@@ -73,15 +70,13 @@ func (c *FakeServices) List(opts v1.ListOptions) (result *inwinstackv1.ServiceLi
 // Watch returns a watch.Interface that watches the requested services.
 func (c *FakeServices) Watch(opts v1.ListOptions) (watch.Interface, error) {
 	return c.Fake.
-		InvokesWatch(testing.NewWatchAction(servicesResource, c.ns, opts))
-
+		InvokesWatch(testing.NewRootWatchAction(servicesResource, opts))
 }
 
 // Create takes the representation of a service and creates it.  Returns the server's representation of the service, and an error, if there is any.
 func (c *FakeServices) Create(service *inwinstackv1.Service) (result *inwinstackv1.Service, err error) {
 	obj, err := c.Fake.
-		Invokes(testing.NewCreateAction(servicesResource, c.ns, service), &inwinstackv1.Service{})
-
+		Invokes(testing.NewRootCreateAction(servicesResource, service), &inwinstackv1.Service{})
 	if obj == nil {
 		return nil, err
 	}
@@ -91,8 +86,7 @@ func (c *FakeServices) Create(service *inwinstackv1.Service) (result *inwinstack
 // Update takes the representation of a service and updates it. Returns the server's representation of the service, and an error, if there is any.
 func (c *FakeServices) Update(service *inwinstackv1.Service) (result *inwinstackv1.Service, err error) {
 	obj, err := c.Fake.
-		Invokes(testing.NewUpdateAction(servicesResource, c.ns, service), &inwinstackv1.Service{})
-
+		Invokes(testing.NewRootUpdateAction(servicesResource, service), &inwinstackv1.Service{})
 	if obj == nil {
 		return nil, err
 	}
@@ -103,8 +97,7 @@ func (c *FakeServices) Update(service *inwinstackv1.Service) (result *inwinstack
 // Add a +genclient:noStatus comment above the type to avoid generating UpdateStatus().
 func (c *FakeServices) UpdateStatus(service *inwinstackv1.Service) (*inwinstackv1.Service, error) {
 	obj, err := c.Fake.
-		Invokes(testing.NewUpdateSubresourceAction(servicesResource, "status", c.ns, service), &inwinstackv1.Service{})
-
+		Invokes(testing.NewRootUpdateSubresourceAction(servicesResource, "status", service), &inwinstackv1.Service{})
 	if obj == nil {
 		return nil, err
 	}
@@ -114,14 +107,13 @@ func (c *FakeServices) UpdateStatus(service *inwinstackv1.Service) (*inwinstackv
 // Delete takes name of the service and deletes it. Returns an error if one occurs.
 func (c *FakeServices) Delete(name string, options *v1.DeleteOptions) error {
 	_, err := c.Fake.
-		Invokes(testing.NewDeleteAction(servicesResource, c.ns, name), &inwinstackv1.Service{})
-
+		Invokes(testing.NewRootDeleteAction(servicesResource, name), &inwinstackv1.Service{})
 	return err
 }
 
 // DeleteCollection deletes a collection of objects.
 func (c *FakeServices) DeleteCollection(options *v1.DeleteOptions, listOptions v1.ListOptions) error {
-	action := testing.NewDeleteCollectionAction(servicesResource, c.ns, listOptions)
+	action := testing.NewRootDeleteCollectionAction(servicesResource, listOptions)
 
 	_, err := c.Fake.Invokes(action, &inwinstackv1.ServiceList{})
 	return err
@@ -130,8 +122,7 @@ func (c *FakeServices) DeleteCollection(options *v1.DeleteOptions, listOptions v
 // Patch applies the patch and returns the patched service.
 func (c *FakeServices) Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *inwinstackv1.Service, err error) {
 	obj, err := c.Fake.
-		Invokes(testing.NewPatchSubresourceAction(servicesResource, c.ns, name, data, subresources...), &inwinstackv1.Service{})
-
+		Invokes(testing.NewRootPatchSubresourceAction(servicesResource, name, data, subresources...), &inwinstackv1.Service{})
 	if obj == nil {
 		return nil, err
 	}
