@@ -43,7 +43,6 @@ type Service struct {
 
 // ServiceSpec is the spec for a Service resource.
 type ServiceSpec struct {
-	Name            string   `json:"name,omitempty"`
 	Description     string   `json:"description,omitempty"`
 	Protocol        string   `json:"protocol,omitempty"`
 	SourcePort      string   `json:"sourcePort,omitempty"`
