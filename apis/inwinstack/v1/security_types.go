@@ -101,7 +101,6 @@ const (
 
 // SecurityStatus represents the current state of a security resource.
 type SecurityStatus struct {
-	Ports          []int         `json:"ports,omitempty"`
 	Phase          SecurityPhase `json:"phase"`
 	Reason         string        `json:"reason,omitempty"`
 	LastUpdateTime metav1.Time   `json:"lastUpdateTime"`

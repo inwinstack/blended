@@ -122,7 +122,6 @@ const (
 
 // NATStatus represents the current state of a NAT resource.
 type NATStatus struct {
-	Ports          []int       `json:"ports,omitempty"`
 	Phase          NATPhase    `json:"phase"`
 	Reason         string      `json:"reason,omitempty"`
 	LastUpdateTime metav1.Time `json:"lastUpdateTime"`
