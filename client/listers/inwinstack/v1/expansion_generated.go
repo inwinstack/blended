@@ -48,3 +48,7 @@ type SecurityNamespaceListerExpansion interface{}
 // ServiceListerExpansion allows custom methods to be added to
 // ServiceLister.
 type ServiceListerExpansion interface{}
+
+// ServiceNamespaceListerExpansion allows custom methods to be added to
+// ServiceNamespaceLister.
+type ServiceNamespaceListerExpansion interface{}

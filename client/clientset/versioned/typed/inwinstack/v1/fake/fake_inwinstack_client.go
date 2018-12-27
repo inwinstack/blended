@@ -43,8 +43,8 @@ func (c *FakeInwinstackV1) Securities(namespace string) v1.SecurityInterface {
 	return &FakeSecurities{c, namespace}
 }
 
-func (c *FakeInwinstackV1) Services() v1.ServiceInterface {
-	return &FakeServices{c}
+func (c *FakeInwinstackV1) Services(namespace string) v1.ServiceInterface {
+	return &FakeServices{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate
