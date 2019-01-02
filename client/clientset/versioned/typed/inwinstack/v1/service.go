@@ -29,7 +29,7 @@ import (
 // ServicesGetter has a method to return a ServiceInterface.
 // A group's client should implement this interface.
 type ServicesGetter interface {
-	Services(namespace string) ServiceInterface
+	Services() ServiceInterface
 }
 
 // ServiceInterface has methods to work with Service resources.
@@ -49,14 +49,12 @@ type ServiceInterface interface {
 // services implements ServiceInterface
 type services struct {
 	client rest.Interface
-	ns     string
 }
 
 // newServices returns a Services
-func newServices(c *InwinstackV1Client, namespace string) *services {
+func newServices(c *InwinstackV1Client) *services {
 	return &services{
 		client: c.RESTClient(),
-		ns:     namespace,
 	}
 }
 
@@ -64,7 +62,6 @@ func newServices(c *InwinstackV1Client, namespace string) *services {
 func (c *services) Get(name string, options metav1.GetOptions) (result *v1.Service, err error) {
 	result = &v1.Service{}
 	err = c.client.Get().
-		Namespace(c.ns).
 		Resource("services").
 		Name(name).
 		VersionedParams(&options, scheme.ParameterCodec).
@@ -77,7 +74,6 @@ func (c *services) Get(name string, options metav1.GetOptions) (result *v1.Servi
 func (c *services) List(opts metav1.ListOptions) (result *v1.ServiceList, err error) {
 	result = &v1.ServiceList{}
 	err = c.client.Get().
-		Namespace(c.ns).
 		Resource("services").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Do().
@@ -89,7 +85,6 @@ func (c *services) List(opts metav1.ListOptions) (result *v1.ServiceList, err er
 func (c *services) Watch(opts metav1.ListOptions) (watch.Interface, error) {
 	opts.Watch = true
 	return c.client.Get().
-		Namespace(c.ns).
 		Resource("services").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Watch()
@@ -99,7 +94,6 @@ func (c *services) Watch(opts metav1.ListOptions) (watch.Interface, error) {
 func (c *services) Create(service *v1.Service) (result *v1.Service, err error) {
 	result = &v1.Service{}
 	err = c.client.Post().
-		Namespace(c.ns).
 		Resource("services").
 		Body(service).
 		Do().
@@ -111,7 +105,6 @@ func (c *services) Create(service *v1.Service) (result *v1.Service, err error) {
 func (c *services) Update(service *v1.Service) (result *v1.Service, err error) {
 	result = &v1.Service{}
 	err = c.client.Put().
-		Namespace(c.ns).
 		Resource("services").
 		Name(service.Name).
 		Body(service).
@@ -126,7 +119,6 @@ func (c *services) Update(service *v1.Service) (result *v1.Service, err error) {
 func (c *services) UpdateStatus(service *v1.Service) (result *v1.Service, err error) {
 	result = &v1.Service{}
 	err = c.client.Put().
-		Namespace(c.ns).
 		Resource("services").
 		Name(service.Name).
 		SubResource("status").
@@ -139,7 +131,6 @@ func (c *services) UpdateStatus(service *v1.Service) (result *v1.Service, err er
 // Delete takes name of the service and deletes it. Returns an error if one occurs.
 func (c *services) Delete(name string, options *metav1.DeleteOptions) error {
 	return c.client.Delete().
-		Namespace(c.ns).
 		Resource("services").
 		Name(name).
 		Body(options).
@@ -150,7 +141,6 @@ func (c *services) Delete(name string, options *metav1.DeleteOptions) error {
 // DeleteCollection deletes a collection of objects.
 func (c *services) DeleteCollection(options *metav1.DeleteOptions, listOptions metav1.ListOptions) error {
 	return c.client.Delete().
-		Namespace(c.ns).
 		Resource("services").
 		VersionedParams(&listOptions, scheme.ParameterCodec).
 		Body(options).
@@ -162,7 +152,6 @@ func (c *services) DeleteCollection(options *metav1.DeleteOptions, listOptions m
 func (c *services) Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *v1.Service, err error) {
 	result = &v1.Service{}
 	err = c.client.Patch(pt).
-		Namespace(c.ns).
 		Resource("services").
 		SubResource(subresources...).
 		Name(name).

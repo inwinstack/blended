@@ -54,8 +54,8 @@ func (c *InwinstackV1Client) Securities(namespace string) SecurityInterface {
 	return newSecurities(c, namespace)
 }
 
-func (c *InwinstackV1Client) Services(namespace string) ServiceInterface {
-	return newServices(c, namespace)
+func (c *InwinstackV1Client) Services() ServiceInterface {
+	return newServices(c)
 }
 
 // NewForConfig creates a new InwinstackV1Client for the given config.
