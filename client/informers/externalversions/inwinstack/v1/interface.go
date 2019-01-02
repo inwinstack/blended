@@ -68,5 +68,5 @@ func (v *version) Securities() SecurityInformer {
 
 // Services returns a ServiceInformer.
 func (v *version) Services() ServiceInformer {
-	return &serviceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+	return &serviceInformer{factory: v.factory, tweakListOptions: v.tweakListOptions}
 }
