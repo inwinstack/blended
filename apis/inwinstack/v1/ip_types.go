@@ -45,8 +45,8 @@ type IP struct {
 
 // IPSpec is the spec for a IP resource.
 type IPSpec struct {
-	PoolName        string `json:"poolName"`
-	UpdateNamespace bool   `json:"updateNamespace"`
+	PoolName             string `json:"poolName"`
+	MarkNamespaceRefresh bool   `json:"markNamespaceRefresh"`
 }
 
 type IPPhase string

@@ -46,11 +46,12 @@ type Pool struct {
 
 // PoolSpec is the spec for a pool resource.
 type PoolSpec struct {
-	Address                   string   `json:"address"`
-	IgnoreNamespaces          []string `json:"ignoreNamespaces"`
-	IgnoreNamespaceAnnotation bool     `json:"ignoreNamespaceAnnotation"`
-	AutoAssignToNamespace     bool     `json:"autoAssignToNamespace"`
-	AvoidBuggyIPs             bool     `json:"avoidBuggyIPs"`
+	Addresses         []string `json:"addresses"`
+	IgnoreNamespaces  []string `json:"ignoreNamespaces"`
+	AssignToNamespace bool     `json:"assignToNamespace"`
+	AvoidBuggyIPs     bool     `json:"avoidBuggyIPs"`
+	AvoidGatewayIPs   bool     `json:"avoidGatewayIPs"`
+	FilterIPs         []string `json:"filterIPs,omitempty"`
 }
 
 type PoolPhase string
