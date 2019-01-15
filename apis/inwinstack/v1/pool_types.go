@@ -50,6 +50,7 @@ type PoolSpec struct {
 	IgnoreNamespaces          []string `json:"ignoreNamespaces"`
 	IgnoreNamespaceAnnotation bool     `json:"ignoreNamespaceAnnotation"`
 	AutoAssignToNamespace     bool     `json:"autoAssignToNamespace"`
+	AvoidBuggyIPs             bool     `json:"avoidBuggyIPs"`
 }
 
 type PoolPhase string
