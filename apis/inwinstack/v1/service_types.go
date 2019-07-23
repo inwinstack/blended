@@ -55,10 +55,11 @@ type ServicePhase string
 
 // These are the valid phases of a Service.
 const (
-	ServiceNone    ServicePhase = ""
-	ServicePending ServicePhase = "Pending"
-	ServiceActive  ServicePhase = "Active"
-	ServiceFailed  ServicePhase = "Failed"
+	ServiceNone        ServicePhase = ""
+	ServicePending     ServicePhase = "Pending"
+	ServiceActive      ServicePhase = "Active"
+	ServiceFailed      ServicePhase = "Failed"
+	ServiceTerminating ServicePhase = "Terminating"
 )
 
 // ServiceStatus represents the current state of a Service resource.

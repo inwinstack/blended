@@ -115,10 +115,11 @@ type NATPhase string
 
 // These are the valid phases of a NAT.
 const (
-	NATNone    NATPhase = ""
-	NATPending NATPhase = "Pending"
-	NATActive  NATPhase = "Active"
-	NATFailed  NATPhase = "Failed"
+	NATNone        NATPhase = ""
+	NATPending     NATPhase = "Pending"
+	NATActive      NATPhase = "Active"
+	NATFailed      NATPhase = "Failed"
+	NATTerminating NATPhase = "Terminating"
 )
 
 // NATStatus represents the current state of a NAT resource.

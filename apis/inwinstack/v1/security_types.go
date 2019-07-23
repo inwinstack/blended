@@ -94,10 +94,11 @@ type SecurityPhase string
 
 // These are the valid phases of a security.
 const (
-	SecurityNone    SecurityPhase = ""
-	SecurityPending SecurityPhase = "Pending"
-	SecurityActive  SecurityPhase = "Active"
-	SecurityFailed  SecurityPhase = "Failed"
+	SecurityNone        SecurityPhase = ""
+	SecurityPending     SecurityPhase = "Pending"
+	SecurityActive      SecurityPhase = "Active"
+	SecurityFailed      SecurityPhase = "Failed"
+	SecurityTerminating SecurityPhase = "Terminating"
 )
 
 // SecurityStatus represents the current state of a security resource.
