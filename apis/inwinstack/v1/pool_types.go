@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 inwinSTACK.inc
+Copyright © 2018 inwinSTACK Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ type PoolPhase string
 
 // These are the valid phases of a pool.
 const (
+	PoolNone        PoolPhase = ""
 	PoolActive      PoolPhase = "Active"
 	PoolFailed      PoolPhase = "Failed"
 	PoolTerminating PoolPhase = "Terminating"

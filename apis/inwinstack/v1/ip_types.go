@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 inwinSTACK.inc
+Copyright © 2018 inwinSTACK Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -52,6 +52,7 @@ type IPPhase string
 
 // These are the valid phases of a IP.
 const (
+	IPNone        IPPhase = ""
 	IPActive      IPPhase = "Active"
 	IPFailed      IPPhase = "Failed"
 	IPTerminating IPPhase = "Terminating"

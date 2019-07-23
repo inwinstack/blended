@@ -14,8 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// +k8s:deepcopy-gen=package,register
+package constants
 
-// Package v1 is the v1 version of the API.
-// +groupName=inwinstack.com
-package v1
+const (
+	CustomFinalizer = "finalizer.inwinstack.com"
+	NeedUpdateKey   = "inwinstack.com/need-update"
+)

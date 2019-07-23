@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 inwinSTACK.inc
+Copyright © 2018 inwinSTACK Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -94,6 +94,7 @@ type SecurityPhase string
 
 // These are the valid phases of a security.
 const (
+	SecurityNone    SecurityPhase = ""
 	SecurityPending SecurityPhase = "Pending"
 	SecurityActive  SecurityPhase = "Active"
 	SecurityFailed  SecurityPhase = "Failed"

@@ -5,8 +5,8 @@ Scheme, typing, client packages and Kubernetes-like API objects for PA and IPAM 
 ## Usage
 ```go
 import (
-	inwinv1 "github.com/inwinstack/blended/apis/inwinstack/v1"
-	inwinclientset "github.com/inwinstack/blended/client/clientset/versioned/typed/inwinstack/v1"
+	blendedv1 "github.com/inwinstack/blended/apis/inwinstack/v1"
+	blendedset "github.com/inwinstack/blended/generated/clientset/versioned"
 )
 ```
 Create a new client, then use the exposed services to access different parts of the Kubernetes custom API.

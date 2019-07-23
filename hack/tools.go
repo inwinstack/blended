@@ -1,3 +1,5 @@
+// +build tools
+
 /*
 Copyright © 2018 inwinSTACK Inc
 
@@ -14,8 +16,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// +k8s:deepcopy-gen=package,register
+// This package imports things required by build scripts, to force `go mod` to see them as dependencies
+package tools
 
-// Package v1 is the v1 version of the API.
-// +groupName=inwinstack.com
-package v1
+import _ "k8s.io/code-generator"

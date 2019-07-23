@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 inwinSTACK.inc
+Copyright © 2018 inwinSTACK Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ type ServicePhase string
 
 // These are the valid phases of a Service.
 const (
+	ServiceNone    ServicePhase = ""
 	ServicePending ServicePhase = "Pending"
 	ServiceActive  ServicePhase = "Active"
 	ServiceFailed  ServicePhase = "Failed"

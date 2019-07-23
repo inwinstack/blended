@@ -1,5 +1,5 @@
 /*
-Copyright © 2018 inwinSTACK.inc
+Copyright © 2018 inwinSTACK Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -115,6 +115,7 @@ type NATPhase string
 
 // These are the valid phases of a NAT.
 const (
+	NATNone    NATPhase = ""
 	NATPending NATPhase = "Pending"
 	NATActive  NATPhase = "Active"
 	NATFailed  NATPhase = "Failed"

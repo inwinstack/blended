@@ -14,8 +14,32 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// +k8s:deepcopy-gen=package,register
+package util
 
-// Package v1 is the v1 version of the API.
-// +groupName=inwinstack.com
-package v1
+import (
+	"time"
+
+	"github.com/golang/glog"
+)
+
+type RetriableError struct {
+	Err error
+}
+
+func (r RetriableError) Error() string { return r.Err.Error() }
+
+func Retry(callback func() error, d time.Duration, attempts int) (err error) {
+	for i := 0; i < attempts; i++ {
+		err = callback()
+		if err == nil {
+			return nil
+		}
+		glog.Errorf("Error: %s, Retrying in %s. %d Retries remaining.", err, d, attempts-i)
+		time.Sleep(d)
+	}
+	return err
+}
+
+func SubtractNowTime(t time.Time) time.Duration {
+	return time.Now().Sub(t)
+}
